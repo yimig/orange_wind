@@ -38,6 +38,10 @@ module.exports = {
             indigo:{
                 light:colors.indigo["50"],
                 DEFAULT:colors.indigo["400"]
+            },
+            orange:{
+                light: '#FEF6E8',
+                DEFAULT: '#ffa500'
             }
         },
         textColor:{

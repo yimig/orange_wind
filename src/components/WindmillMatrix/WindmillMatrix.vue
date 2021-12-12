@@ -10,8 +10,6 @@ export default {
   name: "WindmillMatrix",
   data(){
     return{
-      height:800,
-      width:1400,
       length:100,
       rows:0,
       columns:0,
@@ -19,11 +17,12 @@ export default {
       line_length:15
     }
   },
+  props: ['height', 'width'],
   methods:{
     initMatrix:function () {
-      let layout=d3.select('#windmill_matrix').insert('svg').attr('height',this.$data.height).attr('width',this.$data.width)
-      this.$data.rows=Math.ceil(this.$data.height/this.$data.length)
-      this.$data.columns=Math.ceil(this.$data.width/this.$data.length)
+      let layout=d3.select('#windmill_matrix').insert('svg').attr('height',this.height).attr('width',this.width)
+      this.$data.rows=Math.ceil(this.height/this.$data.length)
+      this.$data.columns=Math.ceil(this.width/this.$data.length)
       let layout_matrix=[]
       for (let i = 0; i < this.$data.rows; i++) {
         let rows=[]

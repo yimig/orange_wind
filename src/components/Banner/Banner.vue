@@ -1,8 +1,8 @@
 <template>
   <div class="flex h-full w-full justify-center items-center">
     <div class="text-5xl relative text-darklight">
-      <WindmillMatrix></WindmillMatrix>
-      <NeonMatrix :text="['Bonjour!','Sail↑ ↑ ↑','Sputnik→','@LAUNCH','Tell me']" class="absolute bottom-10 right-0"></NeonMatrix>
+      <WindmillMatrix :height="getHeight()" :width="getWidth()"></WindmillMatrix>
+      <NeonMatrix :text="content" class="absolute bottom-10 right-0"></NeonMatrix>
       <Planet></Planet>
 <!--      <div class="absolute top-20 left-10 bg-gray-darker text-white p-6 rounded-2xl cursor-pointer">-->
 <!--        <div class="logo">UPANE.CN</div>-->
@@ -24,6 +24,19 @@ export default {
   props:['text'],
   data(){
     return{
+      content:['Bonjour!','Sail↑ ↑ ↑','@LAUNCH','HELLO']
+    }
+  },
+  methods:{
+    getHeight: function () {
+      let bgHeight = document.body.clientHeight * 0.8
+      if(bgHeight < 800) bgHeight = 800
+      return bgHeight
+    },
+    getWidth: function () {
+      let bgWidth = document.body.clientWidth * 0.8
+      if(bgWidth < 1400 ) bgWidth = 1400
+      return bgWidth
     }
   },
   components:{

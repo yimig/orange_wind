@@ -21,7 +21,7 @@ export default {
       now_index: 0,
       block_row_num: 0,
       block_column_num: 0,
-      bg_color: 'white',
+      bg_color: '#FEF6E8',
       color: '#707070',
       isFlash: true,
       frame_interval: 5000,
@@ -808,6 +808,7 @@ export default {
     },
     initMatrix: function (event) {
       let layout = d3.select('#neon_matrix').insert('svg').attr('height', this.$data.height).attr('width', this.$data.width)
+      layout.insert('rect').attr('width','100%').attr('height','100%').attr('fill',this.bg_color)
       let layout_matrix = []
       this.$data.block_row_num = this.$data.dataset.length
       this.$data.block_column_num = this.$data.dataset[0].length

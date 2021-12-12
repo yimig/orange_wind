@@ -31,7 +31,7 @@ export default {
         .attr('stroke','orange').attr('stroke-width',2).attr('fill','none')
 
     layout.insert('circle').attr('cx',cx).attr('cy',cy).attr('r',180)
-        .attr('stroke','#707070').attr('stroke-width',2).attr('fill','white')
+        .attr('stroke','#707070').attr('stroke-width',2).attr('fill','#FEF6E8')
 
     //'M1379.73,83c18.67,40-270.52,214.41-645.92,389.46S38.94,757,20.27,717'
     layout.insert('path').attr('d',
