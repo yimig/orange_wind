@@ -39,6 +39,16 @@ export default {
       return bgWidth
     }
   },
+  mounted() {
+    let vm = this
+    window.wallpaperPropertyListener = {
+      applyUserProperties: function(properties) {
+        if (properties.customtext) {
+          vm.content = properties.customtext.value.split('|');
+        }
+      },
+    };
+  },
   components:{
     Three,NeonMatrix,WindmillMatrix,Planet
   },
