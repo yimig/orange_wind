@@ -9,7 +9,6 @@
 <!--        <div class="sublogo text-sm text-right mt-2">type.<span class="type text-orangelight">ORANGE_WIND</span> 001</div>-->
 <!--        <div class="h-4 w-4 absolute bg-white rounded-full bottom-3 left-3"></div>-->
 <!--      </div>-->
-<!--              <Three height="300" width="800" class="absolute top-24 left-24"></Three>-->
     </div>
   </div>
 </template>
@@ -17,7 +16,6 @@
 <script>
 import NeonMatrix from "../NeonMatrix/NeonMatrix.vue";
 import WindmillMatrix from "../WindmillMatrix/WindmillMatrix.vue";
-import Three from "../Three/Three.vue";
 import Planet from "../Planet/Planet.vue";
 export default {
   name: "Banner",
@@ -50,7 +48,7 @@ export default {
     };
   },
   components:{
-    Three,NeonMatrix,WindmillMatrix,Planet
+    NeonMatrix,WindmillMatrix,Planet
   },
   computed:{
   }

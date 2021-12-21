@@ -8,7 +8,6 @@
 <script>
 import * as d3 from "d3"
 
-var Mock = require('mockjs')
 export default {
   name: "NeonMatrix",
   data() {
@@ -837,7 +836,7 @@ export default {
       for (let i = 0; i < this.$data.block_row_num; i++) {
         for (let j = 0; j < this.$data.block_column_num; j++) {
           if (this.$data.dataset[i][j] == 1) {
-            if (isFlash) this.$data.layout_matrix[i][j].transition().delay(Mock.Random.integer(0, this.$data.delay)).attr('fill', this.$data.color)
+            if (isFlash) this.$data.layout_matrix[i][j].transition().delay(Math.random()* this.$data.delay).attr('fill', this.$data.color)
             else this.$data.layout_matrix[i][j].attr('fill', this.$data.color)
           }
         }
@@ -853,7 +852,7 @@ export default {
     clearFrame: function () {
       for (let i = 0; i < this.$data.block_row_num; i++) {
         for (let j = 0; j < this.$data.block_column_num; j++) {
-          if (this.$data.isFlash) this.$data.layout_matrix[i][j].transition().delay(Mock.Random.integer(0, this.$data.delay)).attr('fill', this.$data.bg_color)
+          if (this.$data.isFlash) this.$data.layout_matrix[i][j].transition().delay(Math.random()* this.$data.delay).attr('fill', this.$data.bg_color)
           else this.$data.layout_matrix[i][j].attr('fill', this.$data.bg_color)
         }
       }
