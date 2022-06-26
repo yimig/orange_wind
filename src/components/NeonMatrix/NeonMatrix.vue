@@ -12,8 +12,7 @@ export default {
   name: "NeonMatrix",
   data() {
     return {
-      height: 154,
-      width: 968,
+      height: this.width * 0.16,
       gap: 2,
       delay: 500,
       layout_matrix: [],
@@ -785,7 +784,7 @@ export default {
       },
     }
   },
-  props: ['text'],
+  props: ['text', 'width'],
   methods: {
     convertText(text) {
       if (this.$data.dataset.length == 0) {
@@ -806,13 +805,13 @@ export default {
       }
     },
     initMatrix: function (event) {
-      let layout = d3.select('#neon_matrix').insert('svg').attr('height', this.$data.height).attr('width', this.$data.width)
+      let layout = d3.select('#neon_matrix').insert('svg').attr('height', this.$data.height).attr('width', this.width)
       layout.insert('rect').attr('width','100%').attr('height','100%').attr('fill',this.bg_color)
       let layout_matrix = []
       this.$data.block_row_num = this.$data.dataset.length
       this.$data.block_column_num = this.$data.dataset[0].length
       let avg_height = Number.parseInt(this.$data.height / this.$data.block_row_num)
-      let avg_width = Number.parseInt(this.$data.width / this.$data.block_column_num)
+      let avg_width = Number.parseInt(this.width / this.$data.block_column_num)
       let rect_length_max = avg_height > avg_width ? avg_width : avg_height
       let rect_length = rect_length_max - this.$data.gap
       for (let i = 0; i < this.$data.block_row_num; i++) {

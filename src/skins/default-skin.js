@@ -63,6 +63,7 @@ module.exports = {
         }),
         fontFamily: {
             sans: ['Graphik', 'Source Han Sans', 'SimHei', 'sans-serif'],
+            banner: ['Camar']
         },
         extend: {
             flexGrow: {

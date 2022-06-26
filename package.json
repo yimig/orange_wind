@@ -51,7 +51,6 @@
     "babel-cli": "^6.26.0",
     "css-loader": "^5.2.4",
     "d3": "^7.0.1",
-    "element-ui": "^2.15.1",
     "file-loader": "^6.2.0",
     "less": "^4.1.1",
     "mockjs": "^1.1.0",
